@@ -17,4 +17,8 @@ export class AppComponent {
     label: 'Angular blog',
     href: 'https://blog.angular.io/'
   }];
+
+  onTick(eventArgs) {
+    console.log(eventArgs);
+  }
 }

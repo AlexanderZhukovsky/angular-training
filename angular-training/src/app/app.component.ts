@@ -7,4 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-training';
+  navigationItems = [{
+    label: 'Tour of Heroes',
+    href: 'https://angular.io/tutorial'
+  }, {
+    label: 'CLI Documentation',
+    href: 'https://angular.io/cli'
+  }, {
+    label: 'Angular blog',
+    href: 'https://blog.angular.io/'
+  }];
 }

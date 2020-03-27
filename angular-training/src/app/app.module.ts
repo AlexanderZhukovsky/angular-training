@@ -5,16 +5,20 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './child/child.component';
 
+import { CommunicationService } from './services/communication.service';
+import { TestComponent } from './test/test.component';
+
 @NgModule({
   declarations: [
     AppComponent,
-    ChildComponent
+    ChildComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [CommunicationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

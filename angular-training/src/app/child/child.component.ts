@@ -1,5 +1,7 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 
+import { CommunicationService} from '../services/communication.service';
+
 @Component({
   selector: 'app-child',
   templateUrl: './child.component.html',
@@ -7,7 +9,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 })
 export class ChildComponent implements OnInit {
 
-  constructor() { }
+  constructor(public service: CommunicationService) { }
 
   @Input() title: string;
   @Output() tick = new EventEmitter<object>();
@@ -16,8 +18,9 @@ export class ChildComponent implements OnInit {
   }
 
   handleTick() {
+    this.service.data = 'Icecream';
     this.tick.emit({
-      label: 'Hello World!'
+      label: this.service.data
     });
   }
 

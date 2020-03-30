@@ -1,0 +1,13 @@
+.form_element {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.parent_form {
+    margin: auto;
+}
+
+.zippy {
+    background: green;
+}

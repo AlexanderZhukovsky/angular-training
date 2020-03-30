@@ -1,0 +1,27 @@
+<h3>
+    <i>Complex Form</i>
+</h3>
+
+<div [formGroup]="userForm" class="parent_form">
+
+    <!-- Common User Info -->
+    <div class="form_element zippy">
+        <label>Nickname:</label>
+        <input formControlName="nickname">
+    </div>
+    <div formGroupName="personalInfo" class="personal_info form_group">
+        <div class="form_element">
+            <label>Name:</label>
+            <input formControlName="name">
+        </div>
+        <div class="form_element">
+            <label>Age:</label>
+            <input formControlName="age">
+        </div>
+    </div>
+
+    <!-- Addresses component -->
+    <addresses-component [parentFormGroup3]="null"></addresses-component>
+</div>
+
+<div>Form Values:<pre [innerHtml]="userForm.value | prettyjson:3"></pre></div>

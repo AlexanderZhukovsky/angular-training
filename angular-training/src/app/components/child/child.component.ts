@@ -1,6 +1,5 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
-
-import { CommunicationService} from '../services/communication.service';
+import { CommunicationService } from 'src/app/services/communication.service';
 
 @Component({
   selector: 'app-child',

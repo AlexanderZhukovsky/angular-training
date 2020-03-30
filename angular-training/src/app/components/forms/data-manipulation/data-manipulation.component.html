@@ -1,0 +1,45 @@
+<h3>
+    <i>Data Manipulation Example</i>
+</h3>
+<div class="main_wrapper">
+    <section [formGroup]="userForm" class="form_container">
+        <div class="form_element small">
+            <button (click)="onResetClicked()">Reset</button>
+        </div>
+
+        <div class="form_element">
+            <label>Nickname:</label>
+            <input formControlName="nickname">
+        </div>
+
+        <div formGroupName="personalInfo" class="form_group">
+
+            <div class="form_element">
+                <label>Name:</label>
+                <input formControlName="name">
+            </div>
+
+            <section class="state_change_controls">
+                <label>Disable/Enable Control</label>
+                <button type="button" (click)="onDisableClicked(userForm.get('personalInfo.name'))">Disable</button>
+                <button type="button" (click)="onEnableClicked(userForm.get('personalInfo.name'))">Enable</button>
+            </section>
+
+            <div class="form_element">
+                <label>Age:</label>
+                <input formControlName="age">
+            </div>
+        </div>
+
+        <!-- <dm-addresses-component [parentFormGroup]="userForm"></dm-addresses-component> -->
+
+        <!-- RXJS exmpl. -->
+        <dm-addresses-component [parentFormGroup]="userForm" [data]="userInfo"></dm-addresses-component>
+
+    </section>
+
+    <section class="submitted_data_container">
+        Form Data:<pre class="data" [innerHtml]="userForm.value | prettyjson:3"></pre>
+        Submitted RAW Data:<pre class="data" [innerHtml]="userForm.getRawValue() | prettyjson:3"></pre>
+    </section>
+</div>

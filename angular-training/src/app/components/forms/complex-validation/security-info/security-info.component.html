@@ -1,0 +1,28 @@
+<div [formGroup]="currentForm" class="form_group security_info">
+
+    <div class="form_element">
+        <label>Login:</label>
+        <input type="text" formControlName="login">
+        <span class="error" *ngIf="isControlInvalid('login')">Login is required</span>
+    </div>
+
+    <div [formGroup]="currentForm.controls.passwordGroup">
+
+        <div class="form_element">
+            <label>Password:</label>
+            <input type="password" formControlName="password">
+            <span class="error" *ngIf="isControlInvalid('passwordGroup.password')">Password is required</span>
+        </div>
+
+        <div class="form_element">
+            <label>Confirm Password:</label>
+            <input type="password" formControlName="confirmPassword">
+            <ng-container *ngIf="isControlInvalid('passwordGroup.confirmPassword')">
+                <span class="error" *ngIf="getControl('passwordGroup.confirmPassword').errors?.required">Confirm Password is required</span>
+                <span class="error" *ngIf="getControl('passwordGroup.confirmPassword').errors?.matchPassword">Passwords do not match</span>
+            </ng-container>
+        </div>
+    </div>
+
+    <div><b>Personal Info</b> Form Valid: {{currentForm.valid}}</div>
+</div>

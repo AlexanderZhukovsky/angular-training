@@ -1,0 +1,92 @@
+<div class="container">
+    <h3>
+        <i>Form Controls</i>
+    </h3>
+
+    <!-- FormControl -->
+    <div class="form_element">
+        <input [formControl]="name">
+    </div>
+
+    <!-- FormControl with Prepopulated Value-->
+    <div class="form_element">
+        <input [formControl]="prepopName">
+    </div>
+
+    <!-- FormControl (dropdown)-->
+    <div class="form_element">
+        <select [formControl]="age">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+        </select>
+    </div>
+
+    <!-- FormControl (radio)-->
+    <div class="form_element">
+        <label>Gender:</label>
+        <input type="radio" [formControl]="gender" value="male">Male
+        <input type="radio" [formControl]="gender" value="female">Female
+    </div>
+
+    <!-- FormControl (checkbox)-->
+    <div class="form_element">
+        <label>Subscribe?</label>
+        <input type="checkbox" [formControl]="isSubscribe">Checked
+    </div>
+
+    <hr>
+
+    <h3>
+        <i>Form Groups</i>
+    </h3>
+
+    <!-- FormGroup with 2 controls-->
+    <div [formGroup]="passwordGroup">
+        <div class="form_element">
+            <label>Password:</label>
+            <div type="password" formGroupName="password">
+        </div>
+        <div class="form_element">
+            <label>Repeat Password:</label>
+            <input type="password" formControlName="repeatPassword">
+        </div>
+    </div>
+
+    <!-- FormGroup created with model-->
+    <div [formGroup]="userFormGroup">
+        <div class="form_element">
+            <label>Name:</label>
+            <input formControlName="name">
+        </div>
+        <div class="form_element">
+            <label>User Name:</label>
+            <input formControlName="userName">
+        </div>
+        <div class="form_element">
+            <label>Email:</label>
+            <input formControlName="email">
+        </div>
+    </div>
+
+    <hr>
+
+    <h3>
+        <i>Form Array</i>
+    </h3>
+
+    <!-- FormArray-->
+    <div [formGroup]="addressesFormGroup">
+        <div formArrayName="cities">
+            <div *ngFor="let city of citiesGetter.controls">
+                <div class="form_element">
+                    <label>City:</label>
+                    <input [formControl]="city">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<button type="button" (click)="onButtonClick()">Click me</button>

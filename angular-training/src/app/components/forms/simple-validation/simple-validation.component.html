@@ -1,0 +1,64 @@
+<form class="container" [formGroup]="userDetailsForm" (ngSubmit)="onSubmit()">
+    <h3>
+        <i>Simple Validation</i>
+    </h3>
+    <!-- Name -->
+    <div class="form_element">
+        <label>Name:</label>
+        <input formControlName="name">
+        <span class="error" *ngIf="isControlInvalid('name')">Name is required</span>
+    </div>
+
+    <!-- NickName -->
+    <div class="form_element">
+        <label>NickName:</label>
+        <input formControlName="nickName">
+        <span class="error" *ngIf="isControlInvalid('nickName')">NickName must be at least 4 characters</span>
+    </div>
+
+    <section class="state_controls">
+        <label>Validation Set/Remove</label>
+        <button type="button" (click)="onSetValidation()">Set</button>
+        <button type="button" (click)="onRemoveValidation()">Remove</button>
+    </section>
+    <section class="state_controls">
+        <label>Control Disable/Enable</label>
+        <button type="button" (click)="onDisable()">Disable</button>
+        <button type="button" (click)="onEnable()">Enable</button>
+    </section>
+
+    <!-- AGE -->
+    <div class="form_element">
+        <label>Age:</label>
+        <select formControlName="age">
+            <option>9</option>
+            <option>10</option>
+            <option>11</option>
+            <option>12</option>
+            <option>13</option>
+        </select>
+        <span class="error" *ngIf="isControlInvalid('age')">Wrong age. (Should be between 10 and 12)</span>
+    </div>
+
+    <!-- Email -->
+    <div class="form_element">
+        <label>Email:</label>
+        <input formControlName="email">
+        <span class="error" *ngIf="isControlInvalid('email') && getControl('email').errors?.email">Wrong email format</span>
+        <span class="error" *ngIf="isControlInvalid('email') && getControl('email').errors?.emailExist">Email already exist</span>
+    </div>
+
+    <!-- URL -->
+    <div class="form_element">
+        <label>URL:</label>
+        <input formControlName="url">
+
+        <span class="error" *ngIf="isControlInvalid('url')">
+            Only urls served over https and only from the .com top-level domain are accepted.
+        </span>        
+    </div>
+    <button type="submit">Submit</button>
+</form>
+
+<div>Form Valid: {{userDetailsForm.valid}}</div>
+<div>Form Status: {{userDetailsForm.status}}</div>

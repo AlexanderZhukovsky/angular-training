@@ -1,1 +1,140 @@
-/* You can add global styles to this file, and also import other style files */
+
+// FORM COMPONENTS STYLES
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+.form_element {
+    margin: 30px 0;
+}
+
+body {
+    margin: 15px 30px;
+}
+
+select, input:not([type=checkbox]):not([type=radio]), button, textarea {
+    height: 30px;
+    width: 250px;
+}
+
+textarea {
+    height: 60px;
+}
+
+input {
+    text-indent: 5px;
+    border-width: 1px;
+    border-color: grey;
+}
+
+
+input:not([type=checkbox]):not([type=radio]), select, textarea {
+    display: block;
+}
+
+input.ng-touched.ng-invalid {
+    border-color: red;
+}
+
+input.ng-pending,
+input.ng-pending:focus {
+    border: 1px solid orange;
+    outline: none;
+}
+
+.error {
+    font-size: 14px;
+    color: red;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    display: block;
+    width: 300px;
+    margin: 30px 0;
+}
+
+.state_controls,
+.state_change_controls {
+    margin-top: 5px;
+}
+
+.state_controls button,
+.state_change_controls button {
+    width: 70px;
+}
+
+.small button {
+    width: 130px;
+}
+
+.parent_form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 600px;
+    border: 10px solid rgba(127, 200, 59, 0.2);
+}
+
+.personal_info {
+    border: 10px solid rgba(255, 255, 0, 0.2);
+}
+
+.security_info {
+    border: 10px solid rgba(0, 191, 255, 0.2);
+}
+
+.address, .email {
+    border: 10px solid rgba(253, 133, 182, 0.2);
+}
+
+.form_group {
+    width: 400px;
+    margin-bottom: 10px;
+}
+
+.data_manipulation_wrapper {
+    display: flex;
+
+}
+
+.form_container {
+    display: flex;
+    flex-direction: column;
+}
+
+.main_wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+}
+
+.submitted_data_container {
+    right: 100px;
+}
+
+.submitted_data_container div{
+    padding: 20px;
+}
+
+b {
+    display: block;
+    font-size: 18px;
+}
+
+hr {
+    margin: 0;
+}
+
+.pre {
+    outline: 1px solid #ccc;
+    padding: 5px;
+    margin: 5px;
+}
+.string { color: green; }
+.number { color: darkorange; }
+.boolean { color: blue; }
+.null { color: magenta; }
+.key { color: red; }
+// EDN OF FORM COMPONENTS STYLES

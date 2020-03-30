@@ -1,0 +1,29 @@
+<div [formGroup]="currentForm" class="personal_info form_group">
+
+    <div class="form_element">
+        <label>Name:</label>
+        <input type="text" formControlName="name">
+        <span class="error" *ngIf="isControlInvalid('name')">Name is required</span>
+    </div>
+
+    <div formArrayName="emails" class="emails_list">
+        <div *ngFor="let email of getControl('emails').controls; index as i" class="form_group email">
+            <div class="form_element">
+                <label>Email:</label>
+                <input [formControl]="email">
+                <ng-container *ngIf="isControlInvalid('emails.' + i)">
+                    <span class="error" *ngIf="email.errors?.required">Email is required</span>
+                    <span class="error" *ngIf="email.errors?.email">Wrong email format</span>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+
+    <div class="form_element">
+        <span class="error" *ngIf="getControl('emails').errors?.equalExist">Emails are not unique</span>
+        <button (click)="addEmail()">Add Email</button>
+    </div>
+
+
+    <div><b>Personal Info</b> Form Valid: {{currentForm.valid}}</div>
+</div>

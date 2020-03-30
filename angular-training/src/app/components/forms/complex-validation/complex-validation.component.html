@@ -1,0 +1,16 @@
+<h3>
+    <i>Complex Validation Form</i>
+</h3>
+
+<div [formGroup]="userForm" class="parent_form">
+   
+    <security-info [parentFormGroup]="userForm"></security-info>
+    <personal-info [parentFormGroup]="userForm"></personal-info>
+
+
+    <div><b>Global</b> Form Valid: {{userForm.valid}}</div>
+    <button type="button" (click)="onSubmit()">Submit</button>
+</div>
+
+
+<!-- <div>Form Values:<pre [innerHtml]="userForm.value | prettyjson:3"></pre></div> -->

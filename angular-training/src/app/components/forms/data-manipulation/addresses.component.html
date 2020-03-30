@@ -1,0 +1,34 @@
+<ng-container [formGroup]="parentFormGroup">
+    <div formArrayName="addresses">
+        <div *ngFor="let address of parentFormGroup.controls.addresses.controls; let i = index;" [formGroup]="address" class="form_group">
+            
+            <div class="form_element">
+                <b>Address #{{ i + 1}}</b>
+                <label>Country:</label>
+                <select formControlName="country">
+                    <option>Belarus</option>
+                    <option>United States</option>
+                    <option>Canada</option>
+                    <option>Italy</option>
+                    <option>United Kingdom</option>
+                </select>
+            </div>
+
+            <div class="form_element">
+                <label>City:</label>
+                <input formControlName="city">
+            </div>
+
+            <div class="form_element">
+                <label>Address Line:</label>
+                <textarea formControlName="addressLine"></textarea>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="form_element">
+        <button (click)="addAddress()">Add Address</button>
+    </div>
+    
+</ng-container>

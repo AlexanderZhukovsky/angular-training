@@ -1,4 +1,4 @@
-import { Component, OnInit, OnChanges, DoCheck } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
@@ -7,23 +7,14 @@ import { FormGroup, FormBuilder } from '@angular/forms';
     styleUrls: ['./complex-form.component.css']
 })
 
-export class ComplexFormComponent implements OnInit, OnChanges, DoCheck {
+export class ComplexFormComponent implements OnInit {
 
     userForm: FormGroup;
 
     constructor(private formBuilder: FormBuilder) { }
 
-    ngOnChanges() {
-        console.log('ngOnChanges1');
-    }
-
-    ngDoCheck() {
-        console.log('ngDoCheck1');
-    }
-
     ngOnInit() {
-        console.log('ngOnInit1');
-        /** Note: there is no Addresses array */
+        /** Note: there is no Address array */
         this.userForm = this.formBuilder.group({
             nickname: this.formBuilder.control(''),
             

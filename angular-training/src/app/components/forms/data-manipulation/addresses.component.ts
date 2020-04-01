@@ -18,7 +18,7 @@ export class DataManipulationAddressesComponent implements OnInit  {
     @Input() parentFormGroup: FormGroup;
 
     // RXJS exmpl.
-    @Input() data: Observable<any>;
+    @Input() data$: Observable<any>;
 
     constructor(private formBuilder: FormBuilder) { }
 
@@ -26,7 +26,7 @@ export class DataManipulationAddressesComponent implements OnInit  {
         this.parentFormGroup.addControl('addresses', new FormArray( [this.initAddressFormGroup()] ));
 
         // RXJS exmpl.
-        this.data.subscribe(userInfo => { this.setupControlValues(userInfo.addresses); });
+        this.data$.subscribe(userInfo => { this.setupControlValues(userInfo.addresses); });
     }
 
     public initAddressFormGroup() {

@@ -13,25 +13,14 @@ export class Address {
     styleUrls: ['./addresses.component.css']
 })
 
-export class AddressesComponent implements OnInit, OnChanges, DoCheck {
+export class AddressesComponent implements OnInit {
 
-    @Input() parentFormGroup3: FormGroup;
-
-    public parentFormGroup: FormGroup = new FormGroup({});;
+    @Input() parentFormGroup: FormGroup;
 
     constructor(private formBuilder: FormBuilder) { }
 
-    ngOnChanges() {
-        console.log('ngOnChanges2');
-    }
-
-    ngDoCheck() {
-        console.log('ngDoCheck2');
-    }
-
     /** Add forrmArray with 'addresses' name to parent formGroup */
     ngOnInit() { 
-        console.log('ngOnInit2');
         this.parentFormGroup.addControl('addresses', new FormArray( [this.initAddressFormGroup()] ));
     }
 

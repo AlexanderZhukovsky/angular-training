@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { FormBuilder, FormGroup, Validators, FormArray, ValidationErrors, AbstractControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormArray, ValidationErrors } from '@angular/forms';
 
 export function EmailsEqualValidation(array: FormArray): ValidationErrors | null {
     const emailsHashSet = new Set();

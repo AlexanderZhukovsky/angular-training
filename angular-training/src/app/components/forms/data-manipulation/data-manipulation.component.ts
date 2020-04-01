@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder, FormControl } from '@angular/forms';
+import { FormGroup, FormBuilder, FormControl, FormArray } from '@angular/forms';
 import { DataManipulationService } from './data-manipulation.service';
 import { Subject, Observable } from 'rxjs';
 
@@ -10,7 +10,6 @@ import { Subject, Observable } from 'rxjs';
 })
 
 export class DataManipulationComponent implements OnInit {
-
     public userForm: FormGroup;
     public addresses: any[];
 
@@ -64,11 +63,9 @@ export class DataManipulationComponent implements OnInit {
     }
 
     // RXJS exmpl.
-    public get userInfo() {
+    public get userInfo$() {
         return this.userInfoSubj.asObservable();
     }
-
-
 
     // Functions exmpl.
     // private formControl: FormControl;
@@ -76,7 +73,7 @@ export class DataManipulationComponent implements OnInit {
     // private formArray: FormArray;
 
     // private functions() {
-    //     this.formControl.valueChanges.subscribe((value: any) => { })
+    //     this.formControl.valueChanges.subscribe((value: any) => {})
     //     this.formControl.registerOnDisabledChange((isDisabled: boolean) => { })
     //     this.formControl.markAsTouched()
     //     this.formControl.markAsUntouched()

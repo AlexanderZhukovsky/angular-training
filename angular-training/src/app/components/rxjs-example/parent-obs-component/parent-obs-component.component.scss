@@ -1,0 +1,20 @@
+button {
+    margin: 10px;
+    display: block;
+}
+
+.next {
+    color: green;
+}
+
+.error {
+    color: red;
+}
+
+.complete {
+    color: blue;
+}
+
+button:last-child {
+    margin-bottom: 25px;
+}

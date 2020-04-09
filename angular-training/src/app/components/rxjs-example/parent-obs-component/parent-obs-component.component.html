@@ -1,0 +1,29 @@
+<div style="margin-top: 15px">
+    Click count: {{ obs$ | async }}
+</div>
+
+
+<button (click)="onFilterAndMapClicked()" class="next">Filter & Map</button>
+
+<button (click)="onNextClick()" class="next">Next value</button>
+<button (click)="onErrorClick()" class="error">Error!</button>
+<button (click)="onCompleteClick()" class="complete">I'm done</button>
+
+<hr>
+<button (click)="childVisibility = !childVisibility" style="margin-top: 25px">Add/Remove child component</button>
+<button (click)="onUpdateChildClick()" style="margin-top: 25px">Subject next</button>
+<!-- <button (click)="onSubjTypesChangeClick()" style="margin-top: 25px">Sbj types next</button>
+
+<button (click)="onAsyncSubjComplete()" style="margin-top: 25px">Async sbj complete</button> -->
+
+
+<div *ngIf="childVisibility" style="margin-top: 55px">
+    <app-child-obs-component [observable$]="parentObs$"></app-child-obs-component>
+</div>
+
+
+
+<!-- Subject Types exmpl -->
+<!-- <div *ngIf="childVisibility" style="margin-top: 55px">
+    <app-child-subject-types [observable$]="behaviorObs$"></app-child-subject-types>
+</div> -->

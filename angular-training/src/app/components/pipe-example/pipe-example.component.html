@@ -1,0 +1,28 @@
+<p>Money: {{ money | currency }}</p>
+
+<p>Default Format: {{ birthDay | date }}</p>
+
+<p>Short format: {{ birthDay | date:"MM/dd/yy" }}</p>
+
+<p>The hero's birthday is {{ birthDay | date:format }}</p>
+<button (click)="toggleFormat()">Toggle Format</button>
+
+<p>{{  birthDay | date:'fullDate' | uppercase}}</p>
+
+
+<!-- Custom pipes -->
+<hr>
+<h3>Power Booster</h3>
+<p>Super power boost: {{ 2 | exponentialStrength: 3 }}</p>
+
+<h3>Flying Heroes</h3>
+<div *ngFor="let hero of (heroes | flyingHeroes)">
+    {{hero.name}}
+</div>
+
+<!-- Async Pipe -->
+<hr>
+<h3>Async Pipe</h3>
+<div *ngFor="let hero of (heroes$ | async)">
+    {{hero.name}}
+</div>

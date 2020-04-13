@@ -138,3 +138,22 @@ hr {
 .null { color: magenta; }
 .key { color: red; }
 // EDN OF FORM COMPONENTS STYLES
+
+.page {
+    margin-top: 15px;
+    min-height: 150px;
+    height: 100%;
+    border: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    .child {
+        border-color: red;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+}

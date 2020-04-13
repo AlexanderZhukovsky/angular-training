@@ -29,6 +29,14 @@ import { ChildSubjectTypesComponent } from './components/rxjs-example/child-subj
 // Other libraries
 import { PrettyJsonModule } from 'angular2-prettyjson';
 
+// Pipes
+import { ExponentialStrengthPipe } from './components/pipe-example/exponential-strength.pipe';
+import { FlyingHeroesPipe } from './components/pipe-example/flying-heros.pipe';
+
+//Routing example
+import { SomeTestExampleModule } from './modules/routing-example/some-test-example.module';
+import { PipeExampleComponent } from './components/pipe-example/pipe-example.component';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -45,7 +53,10 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
         DataManipulationAddressesComponent,
         ParentObsComponentComponent,
         ChildObsComponentComponent,
-        ChildSubjectTypesComponent
+        ChildSubjectTypesComponent,
+        PipeExampleComponent,
+        ExponentialStrengthPipe,
+        FlyingHeroesPipe
     ],
     imports: [
         BrowserModule,
@@ -53,6 +64,7 @@ import { PrettyJsonModule } from 'angular2-prettyjson';
         AppRoutingModule,
         ReactiveFormsModule,
         PrettyJsonModule,
+        SomeTestExampleModule
     ],
     providers: [CommunicationService],
     bootstrap: [AppComponent]

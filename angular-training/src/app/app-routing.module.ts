@@ -6,18 +6,30 @@ import { ComplexFormComponent } from './components/forms/complex-form/complex-fo
 import { ComplexValidationComponent } from './components/forms/complex-validation/complex-validation.component';
 import { DataManipulationComponent } from './components/forms/data-manipulation/data-manipulation.component';
 import { ParentObsComponentComponent } from './components/rxjs-example/parent-obs-component/parent-obs-component.component';
+import { PipeExampleComponent } from './components/pipe-example/pipe-example.component';
 
 const appRoutes: Routes = [
-  { path: 'simple-elements', component: SimpleFormElementsComponent },
-  { path: 'simple-validation', component: SimpleValidationComponent },
-  { path: 'complex-form', component: ComplexFormComponent },
-  { path: 'complex-validation', component: ComplexValidationComponent },
-  { path: 'data-manipulation', component: DataManipulationComponent },
-  { path: 'rxjs-example', component: ParentObsComponentComponent }
+    {
+        path: 'simple-elements',
+        component: SimpleFormElementsComponent
+    },
+    { path: 'simple-validation', component: SimpleValidationComponent },
+    { path: 'complex-form', component: ComplexFormComponent },
+    { path: 'complex-validation', component: ComplexValidationComponent },
+    { path: 'data-manipulation', component: DataManipulationComponent },
+    { path: 'rxjs-example', component: ParentObsComponentComponent },
+    {
+        path: 'pipe-example',
+        component: PipeExampleComponent
+    },
+    {
+        path: 'dynamic-module-page',
+        loadChildren: './modules/dynamic-loading/dynamic-loading.module#DynamicLoadingModule'
+    }
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(appRoutes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }
